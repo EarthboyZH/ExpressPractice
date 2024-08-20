@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "root",
+    "password": "mmmmm",
+    "database": "ziyi_api_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "timezone": "+11:00"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "ziyi_api_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "timezone": "+11:00"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "ziyi_api_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "timezone": "+11:00"
+  }
+}
