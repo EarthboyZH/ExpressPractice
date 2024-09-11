@@ -14,8 +14,26 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Category.init({
-    name: DataTypes.STRING,
-    rank: DataTypes.INTEGER
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {msg: 'Category name must be unique'},
+      validate: {
+        notNull: {msg: 'Category name is required'},
+        notEmpty: {msg: 'Category name is required'},
+        len: { args: [2, 45], msg: 'Category name must be between 2 and 45 characters'}
+      }
+    },
+    rank: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notNull: {msg: 'Category rank is required'},
+        notEmpty: {msg: 'Category rank is required'},
+        isInt: {msg: 'Category rank must be an integer'},
+        min: { args: [1], msg: 'Category rank must be a positive integer'}
+      }
+    }
   }, {
     sequelize,
     modelName: 'Category',
