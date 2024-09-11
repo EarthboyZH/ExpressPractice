@@ -7,6 +7,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const adminArticleRouter = require('./routes/admin/articles');
 const adminCategoryRouter = require('./routes/admin/categories');
+const adminSettingRouter = require('./routes/admin/settings');
 
 
 const app = express();
@@ -21,5 +22,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/articles', adminArticleRouter);
 app.use('/admin/categories', adminCategoryRouter);
+app.use('/admin/settings', adminSettingRouter);
 
 module.exports = app;
